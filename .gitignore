@@ -31,4 +31,4 @@ coverage
 *.tsbuildinfo
 
 # AI Files
-/.claude/
+.claude
