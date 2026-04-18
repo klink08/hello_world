@@ -9,10 +9,17 @@ import { useUserStore } from '@/stores/user.js'
 // Components
 import Header from '@/components/header/Header.vue'
 
+const mockPush = vi.fn()
+
+vi.mock('vue-router', () => ({
+  useRouter: () => ({ push: mockPush }),
+}))
+
 describe('Scenario: Header', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     vi.useFakeTimers()
+    mockPush.mockClear()
   })
 
   afterEach(() => {
@@ -43,6 +50,16 @@ describe('Scenario: Header', () => {
 
       it('Then: The first and last names are displayed', () => {
         expect(wrapper.text()).toContain('Kellen Link')
+      })
+    })
+
+    describe('When: The "Go to Home" button is clicked', () => {
+      beforeEach(async () => {
+        await wrapper.find('button').trigger('click')
+      })
+
+      it('Then: The router navigates to /home', () => {
+        expect(mockPush).toHaveBeenCalledWith('/home')
       })
     })
   })

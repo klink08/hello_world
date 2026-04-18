@@ -1,5 +1,5 @@
 // Libraries
-import { describe, beforeEach, it, expect } from 'vitest'
+import { describe, beforeEach, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 
@@ -9,9 +9,16 @@ import { useUserStore } from '@/stores/user.js'
 // Components
 import Dashboard from '@/components/dashboard/Dashboard.vue'
 
+const mockPush = vi.fn()
+
+vi.mock('vue-router', () => ({
+  useRouter: () => ({ push: mockPush }),
+}))
+
 describe('Scenario: Dashboard', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
+    mockPush.mockClear()
   })
 
   describe('Given: The component is mounted on the page', () => {
@@ -22,8 +29,18 @@ describe('Scenario: Dashboard', () => {
     })
 
     describe('When: The user is loaded', () => {
-      it('Then: The first and last names are displayed', () => {
+      it('Then: The page is displayed', () => {
         expect(wrapper.text()).toContain('Dashboard Component')
+      })
+    })
+
+    describe('When: The "Go to Secondary" button is clicked', () => {
+      beforeEach(async () => {
+        await wrapper.find('button').trigger('click')
+      })
+
+      it('Then: The router navigates to /secondary', () => {
+        expect(mockPush).toHaveBeenCalledWith('/secondary')
       })
     })
   })
