@@ -1,10 +1,6 @@
 // Libraries
 import { describe, beforeEach, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { createPinia, setActivePinia } from 'pinia'
-
-// Stores
-import { useUserStore } from '@/stores/user.js'
 
 // Components
 import Dashboard from '@/components/dashboard/Dashboard.vue'
@@ -17,7 +13,6 @@ vi.mock('vue-router', () => ({
 
 describe('Scenario: Dashboard', () => {
   beforeEach(() => {
-    setActivePinia(createPinia())
     mockPush.mockClear()
   })
 

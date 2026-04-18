@@ -4,7 +4,7 @@ import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 
 // Stores
-import { useUserStore } from '@/stores/user.js'
+import { useUserStore } from '@/stores/user/user.js'
 
 // Components
 import Header from '@/components/header/Header.vue'

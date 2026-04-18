@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . && prettier . --check",
     "preview": "vite preview",
-    "test": "vitest",
+    "test": "vitest --run",
     "test:coverage": "vitest --coverage --run",
     "prepare": "husky"
   },

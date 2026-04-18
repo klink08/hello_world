@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 // Libraries
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
@@ -7,7 +7,7 @@ import { useRouter } from 'vue-router'
 import IconVueLogo from '@/icons/IconVueLogo.vue'
 
 // Stores
-import { useUserStore } from '@/stores/user.js'
+import { useUserStore } from '@/stores/user/user.js'
 
 const router = useRouter()
 const userStore = useUserStore()

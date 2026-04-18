@@ -1,4 +1,18 @@
-<script setup></script>
+<script lang="ts" setup>
+// Libraries
+import { onMounted } from 'vue'
+
+// Stores
+import { useFeatureFlagStore } from '@/stores/featureFlag/featureFlag.js'
+
+const featureFlagStore = useFeatureFlagStore()
+
+onMounted(() => {
+  featureFlagStore.setAllFlags({
+    isDarkMode: true,
+  })
+})
+</script>
 
 <template>
   <h1>Vue Router</h1>
