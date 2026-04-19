@@ -1,17 +1,6 @@
 <script lang="ts" setup>
 // Libraries
-import { onMounted } from 'vue'
-
-// Stores
-import { useFeatureFlagStore } from '@/stores/featureFlag/featureFlag.js'
-
-const featureFlagStore = useFeatureFlagStore()
-
-onMounted(() => {
-  featureFlagStore.setAllFlags({
-    isDarkMode: true,
-  })
-})
+import { PiniaColadaDevtools } from '@pinia/colada-devtools'
 </script>
 
 <template>
@@ -24,6 +13,7 @@ onMounted(() => {
   <main>
     <RouterView />
   </main>
+  <PiniaColadaDevtools />
 </template>
 
 <style scoped></style>

@@ -44,8 +44,8 @@ describe('Scenario: Header', () => {
     describe('When: The user is loaded', () => {
       beforeEach(async () => {
         userStore = useUserStore()
-        await userStore.fetchUser()
-        vi.advanceTimersByTime(3000)
+        userStore.setUserProfile({ firstName: 'Kellen', lastName: 'Link' })
+        await wrapper.vm.$nextTick()
       })
 
       it('Then: The first and last names are displayed', () => {

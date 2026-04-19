@@ -15,10 +15,6 @@ const userStore = useUserStore()
 const goToHome = () => {
   router.push('/home')
 }
-
-onMounted(async () => {
-  await userStore.fetchUser()
-})
 </script>
 
 <template>

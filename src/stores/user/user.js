@@ -14,20 +14,9 @@ export const useUserStore = defineStore('user', {
     },
   },
   actions: {
-    async fetchUser() {
-      const fetchUserPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve({
-            firstName: 'Kellen',
-            lastName: 'Link',
-          })
-        }, 2000)
-      })
-
-      fetchUserPromise.then((response) => {
-        this.firstName = response.firstName
-        this.lastName = response.lastName
-      })
+    setUserProfile({ firstName, lastName }) {
+      this.firstName = firstName
+      this.lastName = lastName
     },
   },
 })

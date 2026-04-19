@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 /**
  * @return {FeatureFlagStore}
  */
-export const useFeatureFlagStore = defineStore('featureFlags', {
+export const useFeatureFlagsStore = defineStore('featureFlags', {
   state: () => ({
     isReady: false,
     flags: {},

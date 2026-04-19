@@ -36,10 +36,9 @@ describe('Scenario: User Store', () => {
       })
     })
 
-    describe('When: fetchUser is called and the request resolves', () => {
-      beforeEach(async () => {
-        await userStore.fetchUser()
-        vi.advanceTimersByTime(2000)
+    describe('When: setUserProfile is called with a user object', () => {
+      beforeEach(() => {
+        userStore.setUserProfile({ firstName: 'Kellen', lastName: 'Link' })
       })
 
       it('Then: The first name is updated', () => {
