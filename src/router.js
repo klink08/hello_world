@@ -6,8 +6,8 @@ import Home from '@/pages/Home.vue'
 import Secondary from '@/pages/Secondary.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/secondary', component: Secondary },
+  { path: '/vue_example/', component: Home },
+  { path: '/vue_example/secondary', component: Secondary },
 ]
 
 export const router = createRouter({

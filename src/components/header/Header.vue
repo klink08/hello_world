@@ -9,22 +9,14 @@ import IconVueLogo from '@/icons/IconVueLogo.vue'
 // Stores
 import { useUserStore } from '@/stores/user/user.js'
 
-const router = useRouter()
 const userStore = useUserStore()
-
-const goToHome = () => {
-  router.push('/home')
-}
 </script>
 
 <template>
-  <main>
-    <IconVueLogo />
-    <div>First Name: {{ userStore.firstName }}</div>
-    <div>Last Name: {{ userStore.lastName }}</div>
-    <div>Full Name: {{ userStore.fullName }}</div>
-    <button @click="goToHome">Go to Home</button>
-  </main>
+  <IconVueLogo />
+  <div>First Name: {{ userStore.firstName }}</div>
+  <div>Last Name: {{ userStore.lastName }}</div>
+  <div>Full Name: {{ userStore.fullName }}</div>
 </template>
 
 <style scoped></style>

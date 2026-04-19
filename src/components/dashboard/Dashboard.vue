@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const goToSecondary = () => {
-  router.push('/secondary')
+  router.push('/vue_example/secondary')
 }
 </script>
 
