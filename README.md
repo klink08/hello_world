@@ -1,22 +1,23 @@
 # vue_example
 
-A Vue 3 single-page application demonstrating component architecture, Pinia state management, and Vue Router navigation. Features a header that loads user data asynchronously and a dashboard with client-side routing.
+A Vue 3 single-page application demonstrating component architecture, Pinia state management, Vue Router navigation, and data fetching via Pinia Colada. User profile and feature flag data is loaded on navigation using route data loaders.
 
 ## Dependencies
 
-| Package                   | Purpose                                 |
-| ------------------------- | --------------------------------------- |
-| Vue 3                     | UI framework                            |
-| Pinia                     | State management                        |
-| Vue Router                | Client-side routing                     |
-| Tailwind CSS 4            | Utility-first styling (via Vite plugin) |
-| Vite 8                    | Build tool and dev server               |
-| Vitest                    | Unit testing                            |
-| `@vue/test-utils`         | Vue component test utilities            |
-| `happy-dom`               | DOM environment for tests               |
-| `vite-plugin-magical-svg` | SVG bundling and sprite generation      |
-| ESLint + Prettier         | Linting and formatting                  |
-| Husky                     | Git hooks                               |
+| Package                   | Purpose                                      |
+| ------------------------- | -------------------------------------------- |
+| Vue 3                     | UI framework                                 |
+| Pinia                     | State management                             |
+| Vue Router 5              | Client-side routing with data loader support |
+| `@pinia/colada`           | Data fetching and caching layer              |
+| Tailwind CSS 4            | Utility-first styling (via Vite plugin)      |
+| Vite 8                    | Build tool and dev server                    |
+| Vitest                    | Unit testing                                 |
+| `@vue/test-utils`         | Vue component test utilities                 |
+| `happy-dom`               | DOM environment for tests                    |
+| `vite-plugin-magical-svg` | SVG bundling and sprite generation           |
+| ESLint + Prettier         | Linting and formatting                       |
+| Husky                     | Git hooks                                    |
 
 Node version is pinned to **v24.1.0** via `.nvmrc`. Use [nvm](https://github.com/nvm-sh/nvm) to switch automatically.
 
