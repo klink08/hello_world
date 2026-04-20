@@ -7,10 +7,10 @@ export default mergeConfig(
     test: {
       environment: 'happy-dom',
       include: ['src/components/**/*.spec.js', 'src/stores/**/*.spec.js'],
-    },
-    coverage: {
-      reporter: ['default', 'json-summary', 'json'],
-      reportOnFailure: true,
+      coverage: {
+        reporter: ['default', 'json-summary', 'json'],
+        reportOnFailure: true,
+      },
     },
   })
 )
